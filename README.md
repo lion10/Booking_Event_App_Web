@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 # Booking-Event-App-Based-On-Web
+=======
+# Booking-Event-App- based on web
+>>>>>>> get connection with firebase and hide sensetive data
 
 
 ## Description
@@ -50,8 +54,11 @@ c. backend side
 ## References
 
 1) https://www.freecodecamp.org/news/how-to-build-an-event-booking-app-using-html-css-javascript-and-firebase/#markup
+<<<<<<< HEAD
 2) https://www.npmjs.com/package/dotenv
 3) https://www.youtube.com/watch?v=17UVejOw3zA
+=======
+>>>>>>> get connection with firebase and hide sensetive data
 
 ## Author Info
 
