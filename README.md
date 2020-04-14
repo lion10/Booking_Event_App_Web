@@ -11,7 +11,7 @@ The Event Booking App will have the following functionalities, which the app wil
 
 
 
-#### Technologies
+### Technologies
 
 - html 5
 - css 3
@@ -19,7 +19,7 @@ The Event Booking App will have the following functionalities, which the app wil
 - Cloud Firestore 
 - Firebase
 
-#### What is the most problems and challenges faced me during the development of this application?
+### What is the most problems and challenges faced me during the development of this application?
 
 a. git side
    - problem_1) updates were rejected because the remote contains work that you do not have locally?
