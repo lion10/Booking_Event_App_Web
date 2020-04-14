@@ -50,6 +50,7 @@ c. backend side
 ## References
 
 1) https://www.freecodecamp.org/news/how-to-build-an-event-booking-app-using-html-css-javascript-and-firebase/#markup
+2) https://www.npmjs.com/package/dotenv
 
 ## Author Info
 
