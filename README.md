@@ -51,6 +51,7 @@ c. backend side
 
 1) https://www.freecodecamp.org/news/how-to-build-an-event-booking-app-using-html-css-javascript-and-firebase/#markup
 2) https://www.npmjs.com/package/dotenv
+3) https://www.youtube.com/watch?v=17UVejOw3zA
 
 ## Author Info
 
