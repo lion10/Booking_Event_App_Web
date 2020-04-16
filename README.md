@@ -1,8 +1,4 @@
-<<<<<<< HEAD
 # Booking-Event-App-Based-On-Web
-=======
-# Booking-Event-App- based on web
->>>>>>> get connection with firebase and hide sensetive data
 
 
 ## Description
@@ -15,7 +11,7 @@ The Event Booking App will have the following functionalities, which the app wil
 
 
 
-#### Technologies
+### Technologies
 
 - html 5
 - css 3
@@ -23,7 +19,7 @@ The Event Booking App will have the following functionalities, which the app wil
 - Cloud Firestore 
 - Firebase
 
-#### What is the most problems and challenges faced me during the development of this application?
+### What is the most problems and challenges faced me during the development of this application?
 
 a. git side
    - problem_1) updates were rejected because the remote contains work that you do not have locally?
@@ -54,11 +50,9 @@ c. backend side
 ## References
 
 1) https://www.freecodecamp.org/news/how-to-build-an-event-booking-app-using-html-css-javascript-and-firebase/#markup
-<<<<<<< HEAD
 2) https://www.npmjs.com/package/dotenv
 3) https://www.youtube.com/watch?v=17UVejOw3zA
-=======
->>>>>>> get connection with firebase and hide sensetive data
+
 
 ## Author Info
 

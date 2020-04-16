@@ -3,7 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Booking Event App</title>
+    <title>Event Booking App</title>
+    <link rel="stylesheet" href="style.css">
+
 </head>
 <body>
 
@@ -17,8 +19,8 @@
           </ul>
         </nav>
         <div class="welcome-event"></div>
-      </header>
-      <main>
+    </header>
+    <main>
           <section id="events">
               <h1 class="section-title">Events</h1>
               <div class="events-container"></div>
@@ -37,9 +39,7 @@
               </form>
           </section>
 
-
-
-
+    </main>
 
          <!-- The core Firebase JS SDK is always required and must be listed first -->
         <script src="https://www.gstatic.com/firebasejs/7.14.0/firebase-app.js"></script>
@@ -50,25 +50,23 @@
 
         <script src="sensetive_data.js"></script>
 
-<script>
-  // Your web app's Firebase configuration
-  var firebaseConfig = {
-    apiKey: api,
-    authDomain: "booking-event-app-59453.firebaseapp.com",
-    databaseURL: "https://booking-event-app-59453.firebaseio.com",
-    projectId: "booking-event-app-59453",
-    storageBucket: "booking-event-app-59453.appspot.com",
-    messagingSenderId: "729810668895",
-    appId: "1:729810668895:web:e32c364372a965935abaea",
-    measurementId: "G-7WBRL6SSRH"
-  };
-  
-  // Initialize Firebase
-  firebase.initializeApp(firebaseConfig);
-  firebase.analytics();
-</script>
-
-
+        <script>
+        // Your web app's Firebase configuration
+        var firebaseConfig = {
+            apiKey: api,
+            authDomain: "booking-event-app-59453.firebaseapp.com",
+            databaseURL: "https://booking-event-app-59453.firebaseio.com",
+            projectId: "booking-event-app-59453",
+            storageBucket: "booking-event-app-59453.appspot.com",
+            messagingSenderId: "729810668895",
+            appId: "1:729810668895:web:e32c364372a965935abaea",
+            measurementId: "G-7WBRL6SSRH"
+        };
+        
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+        firebase.analytics();
+        </script>
 
 </body>
 </html>
