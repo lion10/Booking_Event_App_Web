@@ -1,25 +1,26 @@
 
 // db : it's the reference to firebase.firestore()
-
 db.collection('events').onSnapshot(snapshot=>{
 
-    const newsetEvent =snapshot.docChanges()[0].doc.data();
-    const id =snapshot.docChanges()[0].doc.id;
-    showLatestEvent(newsetEvent,id);
-
-    // delete the latest event 
-    snapshot.docChanges().shift();
-
+    // Handle the latest event
+    const newestEvent = snapshot.docChanges()[0].doc.data()
+    const id = snapshot.docChanges()[0].doc.id
+    showLatesEvent(newestEvent, id);
+    
+    // shift the latest event element
+    snapshot.docChanges().shift()
+    
     snapshot.docChanges().forEach(event => {
-        showEvents(event.doc.data(),event.doc.id);
+        showEvents(event.doc.data(), event.doc.id)
     });
 
 });
+   
 
 const addNewEvent = ()=>{
     const event = {
         name:form.name.value,
-        attendee:from.attendee.value,
+        attendee:form.attendee.value,
         booked:0,
         description: form.description.value,
         status:parseInt(form.status.value,10)
@@ -44,7 +45,7 @@ const bookEvent =(booked ,id) =>{
     const getBookedEvents = localStorage.getItem('booked-events');
 
         if(getBookedEvents){
-            bookEvent = JSON.parse(localStorage.getItem('booked-events'));
+            bookEvent =  JSON.parse(localStorage.getItem('booked-events'));
             if(bookedEvents.includes(id)){
                 alert('Seems like you have already booked this event'); 
             }  else{

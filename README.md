@@ -32,7 +32,9 @@ a. git side
                   then
 
                   git push
+                  
 
+                  
 
 b. frontend side
 
@@ -47,13 +49,29 @@ c. backend side
                     and how i use .gitignore file in my project
 
 
+-    problem_2) Uncaught (in promise) FirebaseError: Missing or insufficient permissions.
+
+        -   sol_2)
+               
+                I look at my Firestore rules, they should match:
+
+                service cloud.firestore {
+                  match /databases/{database}/documents {
+                    match /{document=**} {
+                      allow read;
+                      allow write: if false;
+                    }
+                  }
+                }
+
 ## References
 
-1) https://www.freecodecamp.org/news/how-to-build-an-event-booking-app-using-html-css-javascript-and-firebase/#markup
-2) https://www.npmjs.com/package/dotenv
-3) https://www.youtube.com/watch?v=17UVejOw3zA
-4) https://firebase.google.com/docs/web/setup?authuser=0
-5) https://firebase.google.com/docs/database/web/start
+1) https://www.npmjs.com/package/dotenv
+2) https://www.youtube.com/watch?v=17UVejOw3zA
+3) https://firebase.google.com/docs/web/setup?authuser=0
+4) https://firebase.google.com/docs/database/web/start
+5) https://www.freecodecamp.org/news/how-to-build-an-event-booking-app-using-html-css-javascript-and-firebase/#markup
+6) https://www.youtube.com/watch?v=kmTECF0JZyQ&list=PL4cUxeGkcC9itfjle0ji1xOZ2cjRGY_WB&index=3
 
 
 ## Author Info
