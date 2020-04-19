@@ -25,15 +25,15 @@ const showEvent =  (event,id) =>{
 }
 
 
-const showLatesEvent =  (latestEvent,id) =>{
+const showLatestEvent =  (latestEvent,id) =>{
     const {name, attendee, status, description, booked} = latestEvent;
-    const eventStatus = status ===0 ? 'free':'paid';
+    const eventStatus = status === 0 ? 'free':'paid';
     const output = `
         <h1>${name}</h1>
         <p>${description.length >= 100 ? `${description.substring(0, 100)}...` : description}</p>
         <div>
-        <span>Attendees: ${attendee - booked}</span>
-        <span>Status: ${status === 0 ? 'free': 'paid'}</span>
+            <span>Attendees: ${attendee - booked}</span>
+            <span>Status: ${status === 0 ? 'free': 'paid'}</span>
         </div>
         <button onclick="bookEvent(${booked} ,'${id}')" class="btn btn-tertiary">Book</button>
         `;

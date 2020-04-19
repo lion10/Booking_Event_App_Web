@@ -5,7 +5,7 @@ db.collection('events').onSnapshot(snapshot=>{
     // Handle the latest event
     const newestEvent = snapshot.docChanges()[0].doc.data()
     const id = snapshot.docChanges()[0].doc.id
-    showLatesEvent(newestEvent, id);
+    showLatestEvent(newestEvent, id);
     
     // shift the latest event element
     snapshot.docChanges().shift()
@@ -33,8 +33,8 @@ const addNewEvent = ()=>{
         form.status.value=""
         alert("Your event has been successfully saved")
 
-    }       
-    ).catch(err => console.log(err));
+    })
+    .catch(err => console.log(err));
 }
 
 
@@ -45,7 +45,7 @@ const bookEvent =(booked ,id) =>{
     const getBookedEvents = localStorage.getItem('booked-events');
 
         if(getBookedEvents){
-            bookEvent =  JSON.parse(localStorage.getItem('booked-events'));
+            bookedEvents =  JSON.parse(localStorage.getItem('booked-events'));
             if(bookedEvents.includes(id)){
                 alert('Seems like you have already booked this event'); 
             }  else{
