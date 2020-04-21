@@ -38,7 +38,14 @@ a. git side
 
 b. frontend side
 
-
+   - problem_1) How do I disable the resizable property of a textarea?
+   
+        -   sol_1)
+               
+                textarea {
+                      resize: none; /* there lists possible values for resizing restrictions: none, vertically, both, horizontal, vertical, and inherit */
+                }
+             
 
 
 c. backend side
@@ -63,7 +70,19 @@ c. backend side
                     }
                   }
                 }
+        but we have problem here just we can read from firstore so to be able to write on it we should allow to write 
+        it will become :
+                      
+                I look at my Firestore rules, they should match:
 
+                service cloud.firestore {
+                  match /databases/{database}/documents {
+                    match /{document=**} {
+                      allow read;
+                      allow write;
+                    }
+                  }
+                }
 ## References
 
 1) https://www.npmjs.com/package/dotenv

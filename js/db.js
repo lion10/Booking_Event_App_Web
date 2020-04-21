@@ -11,7 +11,7 @@ db.collection('events').onSnapshot(snapshot => {
     snapshot.docChanges().shift()
     
     snapshot.docChanges().forEach(event => {
-        showEvents(event.doc.data(), event.doc.id)
+        showEvent(event.doc.data(), event.doc.id)
     });
 
 });

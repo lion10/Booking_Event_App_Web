@@ -49,7 +49,8 @@ form.addEventListener('submit',e =>{
 
 window.onscroll = ()=>{
     if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-        nav.style.background = 'var(--tertiary-color)';
+        nav.style.background = 'var(--tertiray-color)';
+      //  nav.style.background = rgba(255,255,255,0.9);
         nav.style.boxShadow = '0 10px 42px rgba(25,17,34,.1)';
       } else {
         nav.style.background = 'none';

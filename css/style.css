@@ -11,7 +11,7 @@
 html{
     --primary-color:#e74c3c;
     --secondary-color :#222;
-    --tertiray-colot:#333;
+    --tertiray-color:#333;
     --light-color:#fff;
     scroll-behavior: smooth;
 }
@@ -20,9 +20,9 @@ body{
 
      background-color: #1f1f1f;
      font-family:'Nunito',sans-serif ;
-     font-size:1.5rem ;
+     font-size:1.3rem ;
      color:var(--light-color);
-     line-height: 1.5;
+     line-height: 1.6;
 }
 
 main {
@@ -37,14 +37,13 @@ a {
 }
 
 nav {
-
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding:0.5rem 2.5rem;
-    z-index: 100%;
+    padding: 0.5rem 2.5rem;
+    z-index: 100;
     width: 100%;
-    transition: background 0.3s;
+    transition:  0.3s ease;
     position: fixed;
     top: 0;
     left: 0;
@@ -136,4 +135,8 @@ input,textarea,select{
     border: 1px solid var(--secondary-color);
     padding:0.7rem;
     border-radius: 10px;
+}
+
+textarea{
+    resize: vertical;
 }
