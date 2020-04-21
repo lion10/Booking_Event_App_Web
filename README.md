@@ -9,6 +9,14 @@ The Event Booking App will have the following functionalities, which the app wil
 3) The user can book an event.
 4) The user can't book an event more than once.
 
+### What do I plan to do in the future ?
+
+1) Login page and the user can login by social media too e.g. facebook,twitter
+2) Signup page and the user can signup by social media too e.g. facebook,twitter
+4) Forget your password and reset it
+3) Notifcation system
+4) About me section
+
 
 
 ### Technologies
