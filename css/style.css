@@ -24,6 +24,18 @@ body{
      color:var(--light-color);
      line-height: 1.5;
 }
+
+main {
+    max-width: 750px;
+    margin: auto;
+    padding: 4rem 0;
+}
+
+a {
+    text-decoration: none;
+    color: var(--light-color);
+}
+
 nav {
 
     display: flex;
@@ -64,7 +76,7 @@ section{
     color: var(--light-color)
 }
 
-.section-title::after{
+.section-title:after{
     display: block;
     content: "";
     width: 6rem;

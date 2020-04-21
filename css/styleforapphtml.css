@@ -1,0 +1,42 @@
+
+.card {
+    min-height: 14rem;
+    background:var(--secondary-color);
+    display: flex;
+    margin-bottom: 2rem;
+    position: relative;
+    box-shadow: 0 10px 42px rgba(25,17,34,.1);
+    padding: 2rem;
+}
+
+.card--details {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.card--details div span, .welcome-event div span {
+    color: #c0a09d;
+}
+.card--details button {
+    margin-left: auto;
+}
+
+.card--details-ribbon {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 4rem;
+    padding: 0.1rem;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.ribbon-free {
+ background:#029e02;
+}
+
+.ribbon-paid {
+ background:#cb0000;
+}

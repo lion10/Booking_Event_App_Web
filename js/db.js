@@ -1,10 +1,10 @@
 
 // db : it's the reference to firebase.firestore()
-db.collection('events').onSnapshot(snapshot=>{
+db.collection('events').onSnapshot(snapshot => {
 
     // Handle the latest event
-    const newestEvent = snapshot.docChanges()[0].doc.data()
-    const id = snapshot.docChanges()[0].doc.id
+    const newestEvent = snapshot.docChanges()[0].doc.data();
+    const id = snapshot.docChanges()[0].doc.id;
     showLatestEvent(newestEvent, id);
     
     // shift the latest event element
@@ -16,27 +16,26 @@ db.collection('events').onSnapshot(snapshot=>{
 
 });
    
-
-const addNewEvent = ()=>{
+const addNewEvent = () => {
     const event = {
-        name:form.name.value,
-        attendee:form.attendee.value,
-        booked:0,
-        description: form.description.value,
-        status:parseInt(form.status.value,10)
+      name: form.name.value,
+      attendee: form.attendee.value,
+      booked: 0,
+      description: form.description.value,
+      status: parseInt(form.status.value, 10)
     }
-    db.collection('events').add(event)
-    .then(() => {
-        form.name.value ="",
-        from.attendee.value="",
-        form.description.value="",
-        form.status.value=""
-        alert("Your event has been successfully saved")
-
-    })
-    .catch(err => console.log(err));
-}
-
+      db.collection('events').add(event)
+      .then(() => {
+      // Reset the form values
+      form.name.value = "",
+      form.attendee.value = "",
+      form.description.value = "",
+      form.status.value = ""
+  
+      alert('Your event has been successfully saved')
+      })
+      .catch(err => console.log(err))
+  }
 
 // I use localStorage to prevent booking duplication
 let bookedEvents = []; 
