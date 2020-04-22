@@ -18,11 +18,46 @@ const showEvent =  (event,id) =>{
                 </span>
                 <p>${description}</p>
                 <button onclick="bookEvent(${booked} ,'${id}')" class="btn btn-tertiary">Book</button>
-
             </div>
         </div>`;
+        
         eventsContainer.innerHTML += output;
+
+        const cardDetails = document.querySelector('.card--details');
+        const card = document.querySelector('.card');
+        let cross = document.createElement('div');
+        cross.className = 'topLeftPlace';
+        card.setAttribute('id-data',id); 
+        cross.textContent ='X';
+        cardDetails.appendChild(cross);
+        card.appendChild(cross);
+        eventsContainer.appendChild(card);
+        cross.addEventListener('click',(e)=>{
+            e.stopPropagation();
+            let tempId =e.target.parentElement.getAttribute('id-data');
+            db.collection('events').doc(tempId).delete();
+        });
+
 }
+
+
+// function deleteEvent(element){
+   
+//     const cardDetails = document.querySelector('.card--details')
+//     let cross = document.createElement('div');
+//     cross.className = 'topLeftPlace';
+//     cardDetails.setAttribute('id-data',element); 
+//     cross.textContent ='X';
+//     cardDetails.appendChild(cross);
+
+//     cross.addEventListener('click',(e)=>{
+//         e.stopPropagation();
+//         let tempId =e.target.parentElement.getAttribute('id-data');
+//         db.collection('events').doc(tempId).delete();
+//     })
+
+// }
+
 
 
 const showLatestEvent =  (latestEvent,id) =>{
@@ -36,6 +71,7 @@ const showLatestEvent =  (latestEvent,id) =>{
             <span>Status: ${status === 0 ? 'free': 'paid'}</span>
         </div>
         <button onclick="bookEvent(${booked} ,'${id}')" class="btn btn-tertiary">Book</button>
+        
         `;
         
     welcomtEvent.innerHTML += output;
@@ -43,7 +79,7 @@ const showLatestEvent =  (latestEvent,id) =>{
 
 
 form.addEventListener('submit',e =>{
-    e.preventDefault();
+    e.preventDefault(); // to prevent refreach the page
     addNewEvent();
 });
 
@@ -56,5 +92,4 @@ window.onscroll = ()=>{
         nav.style.background = 'none';
         nav.style.boxShadow = 'none';
       }
-    
 }

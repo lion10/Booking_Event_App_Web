@@ -40,3 +40,12 @@
 .ribbon-paid {
  background:#cb0000;
 }
+.topLeftPlace{
+    position: absolute;
+    top: 0;
+    right:0;
+    width: 1.5rem;
+    text-align: center;
+    background:#c71e1e;
+    cursor: pointer;
+}

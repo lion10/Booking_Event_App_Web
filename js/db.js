@@ -11,7 +11,7 @@ db.collection('events').onSnapshot(snapshot => {
     snapshot.docChanges().shift()
     
     snapshot.docChanges().forEach(event => {
-        showEvent(event.doc.data(), event.doc.id)
+        showEvent(event.doc.data(), event.doc.id);
     });
 
 });
@@ -64,5 +64,6 @@ const saveBooking =(booked,id) => {
     db.collection('events').doc(id).update(data)
     .then(() => alert('Event successfully booked'))
     .catch(err => console.log(err));
+    
 
 }
