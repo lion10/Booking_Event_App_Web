@@ -1,4 +1,4 @@
-const eventsContainer =  document.querySelector('.events-container');
+//const eventsContainer =  document.querySelector('.events-container');
 const nav =document.querySelector('.navbar');
 const welcomtEvent =document.querySelector('.welcome-event');
 const form = document.querySelector('.form');
@@ -16,47 +16,48 @@ const showEvent =  (event,id) =>{
                 <span class= "card--details-ribbon ribbon-${eventStatus}">
                     ${eventStatus}
                 </span>
+                <div class="topLeftPlace">X</div>
                 <p>${description}</p>
                 <button onclick="bookEvent(${booked} ,'${id}')" class="btn btn-tertiary">Book</button>
             </div>
         </div>`;
-        
+
         eventsContainer.innerHTML += output;
-
-        const cardDetails = document.querySelector('.card--details');
-        const card = document.querySelector('.card');
-        let cross = document.createElement('div');
-        cross.className = 'topLeftPlace';
-        card.setAttribute('id-data',id); 
-        cross.textContent ='X';
-        cardDetails.appendChild(cross);
-        card.appendChild(cross);
-        eventsContainer.appendChild(card);
-        cross.addEventListener('click',(e)=>{
-            e.stopPropagation();
-            let tempId =e.target.parentElement.getAttribute('id-data');
-            db.collection('events').doc(tempId).delete();
-        });
-
+        
+        // const cross = document.querySelector('.topLeftPlace')
+        // const card = document.querySelector('.card')
+        // const eventsContainer =  document.querySelector('.events-container');
+ 
+ 
+        // card.setAttribute('id-data',event.doc.id); 
+        // card.appendChild(cross);
+        // eventsContainer.appendChild(card);
+        
+        //  cross.addEventListener('click',(e)=>{
+        //      e.stopPropagation();
+        //      let id =e.target.parentElement.getAttribute('id-data');
+        //      console.log(id)
+        //      db.collection('events').doc(id).delete();
+        //  })
+      
+      
 }
 
 
-// function deleteEvent(element){
-   
-//     const cardDetails = document.querySelector('.card--details')
-//     let cross = document.createElement('div');
-//     cross.className = 'topLeftPlace';
-//     cardDetails.setAttribute('id-data',element); 
-//     cross.textContent ='X';
-//     cardDetails.appendChild(cross);
+function showDeleteIconForEvent(element){
+    const cross = document.querySelector('.topLeftPlace')
+    const card = document.querySelector('.card')
+    
+    card.setAttribute('id-data',element.id); 
 
-//     cross.addEventListener('click',(e)=>{
-//         e.stopPropagation();
-//         let tempId =e.target.parentElement.getAttribute('id-data');
-//         db.collection('events').doc(tempId).delete();
-//     })
+    cross.addEventListener('click',(e)=>{
+        e.stopPropagation();
+        let tempId =e.target.parentElement.getAttribute('id-data');
+        db.collection('events').doc(tempId).delete();
+    })
+}
 
-// }
+
 
 
 

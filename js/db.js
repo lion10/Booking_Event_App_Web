@@ -1,5 +1,7 @@
 
 // db : it's the reference to firebase.firestore()
+const eventsContainer =  document.querySelector('.events-container');
+
 db.collection('events').onSnapshot(snapshot => {
 
     // Handle the latest event
@@ -11,11 +13,44 @@ db.collection('events').onSnapshot(snapshot => {
     snapshot.docChanges().shift()
     
     snapshot.docChanges().forEach(event => {
-        showEvent(event.doc.data(), event.doc.id);
+        showEvent(event.doc.data(), event.doc.id);      
     });
-
+    
 });
-   
+
+
+function deleteCard(doc){
+     
+    const cross = document.querySelector('.topLeftPlace')
+    console.log(cross)
+    const card = document.querySelector('.card')      
+    console.log(card)
+
+    card.setAttribute('id-data',doc.id);
+    card.appendChild(cross);
+    //eventsContainer.appendChild(card);
+    
+    cross.addEventListener('click',(e)=>{
+         e.stopPropagation();
+         let id =e.target.parentElement.getAttribute('id-data');
+         //console.log(id)
+         if(id != null)
+            db.collection('events').doc(id).delete();
+     })
+
+}
+
+ // get data
+db.collection('events').get().then((sanpshot) =>{
+        sanpshot.docs.forEach(element => {
+            deleteCard(element)
+            });
+        }
+);
+
+ 
+
+
 const addNewEvent = () => {
     const event = {
       name: form.name.value,
@@ -31,10 +66,11 @@ const addNewEvent = () => {
       form.attendee.value = "",
       form.description.value = "",
       form.status.value = ""
-  
+      
       alert('Your event has been successfully saved')
       })
       .catch(err => console.log(err))
+      
   }
 
 // I use localStorage to prevent booking duplication

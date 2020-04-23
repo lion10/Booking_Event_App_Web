@@ -8,6 +8,7 @@ The Event Booking App will have the following functionalities, which the app wil
 2) The user can fetch all events in real-time.
 3) The user can book an event.
 4) The user can't book an event more than once.
+5) The use can delete an event and remove it from Firestore.
 
 ### What are my plans for the future ?
 
